@@ -21,7 +21,7 @@ async function apiLogic(event_endpoint) {
                 try {
                     songLock = true
                     songData = await apiReq("GET", "v1/song")
-                    document.querySelector("#silly_p").innerHTML = "YOU ARE LISTENING TO : " + songData.title + " - " + songData.artist
+                    document.querySelector("#silly_p").innerHTML = "You're listening to: <strong>" + songData.title + " - " + songData.artist + "</strong>"
                     document.querySelector("#thumbnail").src = songData.imageSrc
                 } finally {
                     songLock = false
